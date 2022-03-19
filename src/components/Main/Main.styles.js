@@ -1,12 +1,20 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-    width: 100%;
-    height: 84vh;
-    background-color: ${props => props.theme.colors.main};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+const MainContainer = styled.div`
+	display: flex;
+	width: 100%;
+	height: 85vh;
 
-export default Container
+	.algo-container {
+		height: 100%;
+		background-color: ${(props) => props.theme.colors.main};
+		flex: 1;
+	}
+	.sidebar {
+		width: fit-content;
+		height: 100%;
+		background-color: ${(props) => props.theme.colors.dark};
+	}
+`;
+
+export default MainContainer;

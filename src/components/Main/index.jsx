@@ -1,24 +1,25 @@
-import * as React from 'react';
-import Alogrithm from '../Algorithm';
-import Container from './Main.styles';
+import React from "react";
+import { connect } from "react-redux";
+import AlgorithmsContainer from "../AlgorithmsContainer";
+import Sidebar from "../Sidebar";
+import MainContainer from "./Main.styles";
 
-const Main = () => {
-    return (
-    <Container>
-        {/* <Alogrithm sortingMethod='InsertionSort'/> */}
-        {/* <Alogrithm sortingMethod='QuickSortLeftPivot'/>
-        <Alogrithm sortingMethod='QuickSortMiddlePivot'/> */}
-        {/* <Alogrithm sortingMethod='MergeSort'/> */}
-        {/* <Alogrithm sortingMethod='BucketSort'/> */}
-        {/* <Alogrithm sortingMethod='RadixSortBase10'/> */}
-        {/* <Alogrithm sortingMethod='RadixSortBase5'/> */}
-        <Alogrithm sortingMethod='BozoSort'/>
-        <Alogrithm sortingMethod='BogoSort'/>
-        {/* <Alogrithm sortingMethod='CountingSort'/> */}
-        {/* <Alogrithm sortingMethod='SelectionSort'/> */}
-        {/* <Alogrithm sortingMethod='CircleSort'/> */}
-    </Container>
-    )
+function Main({ algorithms }) {
+	return (
+		<MainContainer>
+			<div className="algo-container">
+				<AlgorithmsContainer algorithms={algorithms} />
+			</div>
+
+			<div className="sidebar">
+				<Sidebar algorithms={algorithms} />
+			</div>
+		</MainContainer>
+	);
 }
 
-export default Main;
+const props = (state) => ({
+	algorithms: state.algorithms,
+});
+
+export default connect(props, null)(Main);

@@ -1,40 +1,34 @@
-import newElements from "./newElements"
+import newElements from "./newElements";
 
-export default function* bubbleBogoSort(items, arrMax){
-    let i = 0
-    let j = 0
-    let arr = JSON.parse(JSON.stringify(items))
-    
-    while (i < arr.length){
-        j = 0
-        
-        arr[i].active = true
-        arr[j].active = true
-        
-        while (j < arr.length - 1){
-            if(arr[j].val > arr[j + 1].val){
-                [arr[j].val, arr[j + 1].val] = [arr[j + 1].val, arr[j].val]
-            }
-            
-            if(j !== i) arr[j].active = false
-            j++
-            arr[j].active = true
-            if(j + 1 !== arr.length) arr[j + 1].active = true 
-            
-            yield newElements(arr, arrMax)
-        }
-        
-        
-        arr[j].active = false
-        arr[i].active = false
-        
-        i++
-        
-        if(i !== arr.length) arr[i].active = true
-        
-        yield newElements(arr, arrMax)
-    }
-    
-    yield newElements(arr.map((el) => ({val: el.val, active: true})), arrMax)
-    
+export default function* bubbleBogoSort(items, arrMax) {
+	let arr = JSON.parse(JSON.stringify(items));
+	let n = arr.length;
+
+	const isSorted = () => {
+		for (let i = 0; i < n - 1; i++) {
+			if (arr[i].val > arr[i + 1].val) {
+				return false;
+			}
+		}
+		return true;
+	};
+
+	while (!isSorted()) {
+		let rand1 = Math.floor(Math.random() * n);
+		let rand2 = Math.floor(Math.random() * n);
+
+		if (rand1 > rand2) {
+			[rand1, rand2] = [rand2, rand1];
+		}
+
+		if (arr[rand1].val > arr[rand2].val) {
+			[arr[rand1].val, arr[rand2].val] = [arr[rand2].val, arr[rand1].val];
+			yield newElements(arr, arrMax);
+		}
+	}
+
+	yield newElements(
+		arr.map((el) => ({ val: el.val, active: true })),
+		arrMax
+	);
 }
