@@ -94,7 +94,6 @@ function AddAlgoModal({ open, setOpen, addAlgorithm }) {
 						<AlgoBtn name={"RadixSortBase2"} />
 						<AlgoBtn name={"RadixSortBase5"} />
 						<AlgoBtn name={"RadixSortBase10"} />
-						<AlgoBtn name={"RadixSortLSD"} />
 					</div>
 				</div>
 				<div className="section">

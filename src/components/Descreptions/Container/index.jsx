@@ -3,17 +3,10 @@ import DescList from "../DescList";
 import DescContainer from "./Container.styles";
 import DescreptionStyled from "./Description.styles";
 import { connect } from "react-redux";
-import BubbleSort from "../BubbleSort";
-import CocktailShakerSort from "../CocktailShakerSort";
 import { doSetDescRef } from "../../../redux/Actions";
-import BubbleSortOptimized from "../BubbleSortOptimized";
-import OddEvenSort from "../OddEvenSort";
-import GnomeSort from "../GnomeSort";
-import GnomeSortOptimized from "../GnomeSortOptimized";
-import CombSort from "../CombSort";
-import CircleSort from "../CircleSort";
-import QuickSort from "../QuickSort";
-import RadixSort from "../RadixSort";
+import getDescription from "../../../utils/getDescription";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import useIntersection from "../../../hooks/useIntersection";
 
 function Descriptions({ description, setDescRef }) {
 	const descRef = React.useRef(null);
@@ -23,14 +16,26 @@ function Descriptions({ description, setDescRef }) {
 		setDescRef(descRef);
 	}, []);
 
+	const inViewport = useIntersection(descRef, "-200px"); // Trigger if 200px is visible from the element
+
+	if (inViewport) {
+		console.log("in viewport:", descRef.current);
+	}
+
 	return (
-		<DescContainer>
-			<div ref={descRef} className="desc-list">
+		<DescContainer buttonVisible={inViewport}>
+			<div className="desc-list">
 				<DescList />
 			</div>
-			<div className="desc-content">
+			<div ref={descRef} className="desc-content">
 				<DescreptionStyled>{desc}</DescreptionStyled>
 			</div>
+			<button
+				onClick={() => window.scrollTo({ top: 0 })}
+				className="scroll-top"
+			>
+				<ArrowUpwardIcon sx={{ fontSize: "2.4rem" }} />
+			</button>
 		</DescContainer>
 	);
 }
@@ -44,34 +49,3 @@ const actions = (dispatch) => ({
 });
 
 export default connect(props, actions)(Descriptions);
-
-const getDescription = (name) => {
-	switch (name) {
-		case "BubbleSort":
-			return <BubbleSort />;
-		case "CocktailShakerSort":
-			return <CocktailShakerSort />;
-		case "BubbleSortOptimized":
-			return <BubbleSortOptimized />;
-		case "OddEvenSort":
-			return <OddEvenSort />;
-		case "GnomeSort":
-			return <GnomeSort />;
-		case "GnomeSortOptimized":
-			return <GnomeSortOptimized />;
-		case "CombSort":
-			return <CombSort />;
-		case "CircleSort":
-			return <CircleSort />;
-		case "QuickSortMiddlePivot":
-		case "QuickSortLeftPivot":
-		case "QuickSortRightPivot":
-			return <QuickSort />;
-		case "RadixSortBase2":
-		case "RadixSortBase5":
-		case "RadixSortBase10":
-			return <RadixSort />;
-		default:
-			return <BubbleSort />;
-	}
-};

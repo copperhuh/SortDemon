@@ -15,7 +15,7 @@ const ModalStyled = styled.div`
 		height: 80vh;
 		background-color: ${(props) => props.theme.colors.dark};
 		color: ${(props) => props.theme.colors.light};
-		overflow: scroll;
+		overflow: auto;
 		display: flex;
 		flex-direction: column;
 		padding: 2rem 3rem 0;
@@ -53,8 +53,8 @@ const ModalStyled = styled.div`
 		padding: 2rem;
 		display: flex;
 		justify-content: space-between;
-		border-bottom: 1px solid ${(props) => props.theme.colors.light};
-		border-top: 1px solid ${(props) => props.theme.colors.light};
+		/* border-bottom: 1px solid ${(props) => props.theme.colors.light};
+		border-top: 1px solid ${(props) => props.theme.colors.light}; */
 	}
 
 	.algo-btn,

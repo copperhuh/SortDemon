@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const DescListStyled = styled.div`
-	padding: 2rem;
-
+	padding: 4rem 2rem 2rem;
 	ul {
 		list-style: none;
 	}
@@ -11,7 +10,7 @@ const DescListStyled = styled.div`
 		background: none;
 		border: none;
 		font-family: ${(props) => props.theme.fonts.main};
-		color: ${(props) => props.theme.colors.dark};
+		color: ${(props) => props.theme.colors.light};
 		&:hover,
 		&:focus {
 			color: ${(props) => props.theme.colors.main};

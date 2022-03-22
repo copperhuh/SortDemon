@@ -6,6 +6,22 @@ export const StyledSortSettingsShown = styled.div`
 	color: ${(props) => props.theme.colors.main};
 	height: fit-content;
 	width: 100%;
+	/* margin-top: 5.5%; */
+	.shuffle {
+		grid-area: shuffle;
+	}
+	.restart {
+		grid-area: restart;
+	}
+	.pause {
+		grid-area: pause;
+	}
+	.start {
+		grid-area: start;
+	}
+	.hide {
+		grid-area: hide;
+	}
 	${(props) =>
 		props.shown &&
 		css`
@@ -27,7 +43,6 @@ export const StyledSortSettingsShown = styled.div`
 				height: 100%;
 			}
 			.hide {
-				grid-area: hide;
 				background: none;
 				border: none;
 				color: ${(props) => props.theme.colors.main};
@@ -64,7 +79,7 @@ export const StyledSortSettingsShown = styled.div`
 				justify-content: space-between;
 			}
 			.num-field {
-				width: 3em;
+				width: 3rem;
 				font-size: 1.5rem;
 				font-weight: 600;
 				font-family: ${(props) => props.theme.fonts.main};
@@ -104,6 +119,7 @@ export const StyledSortSettingsShown = styled.div`
 				font-size: 0.9rem;
 				border: 1px solid ${(props) => props.theme.colors.main};
 				padding: 0.5rem 1rem;
+
 				&:hover {
 					background: ${(props) => props.theme.colors.main};
 					color: ${(props) => props.theme.colors.dark};
@@ -114,18 +130,6 @@ export const StyledSortSettingsShown = styled.div`
 				background: ${(props) => props.theme.colors.main};
 				color: ${(props) => props.theme.colors.dark};
 				border: 1px solid ${(props) => props.theme.colors.dark};
-			}
-			.shuffle {
-				grid-area: shuffle;
-			}
-			.restart {
-				grid-area: restart;
-			}
-			.pause {
-				grid-area: pause;
-			}
-			.start {
-				grid-area: start;
 			}
 			.cntrl-btn {
 				display: flex;
@@ -140,11 +144,85 @@ export const StyledSortSettingsShown = styled.div`
 					border: 1px solid ${(props) => props.theme.colors.dark};
 					font-size: 1.1rem;
 					padding: 0.7rem 1.7rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
 					&:hover {
 						background: ${(props) => props.theme.colors.dark};
 						color: ${(props) => props.theme.colors.main};
 						border: 1px solid ${(props) => props.theme.colors.main};
 					}
+					svg {
+						display: block;
+					}
+				}
+			}
+			@media (max-width: 1200px) {
+				.container {
+					padding: 1.5rem 0;
+					box-sizing: border-box;
+					gap: 1rem;
+					grid-template: 1fr 1fr 1fr/ 1fr 3fr 3fr 3fr 3fr;
+					grid-template-areas:
+						"hide size size shuffle-type-buttons shuffle-type-buttons"
+						"hide speed speed shuffle-type-buttons shuffle-type-buttons"
+						"hide shuffle restart pause start";
+				}
+				.shuffle-container {
+					padding: 0 4rem;
+					box-sizing: border-box;
+				}
+				.cntrl-btn button {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+				}
+			}
+			@media (max-width: 960px) {
+				.shuffle-container {
+					padding: 0;
+				}
+				.slider {
+					margin-left: 1rem;
+				}
+				.container {
+					grid-template-areas:
+						"size size size shuffle-type-buttons shuffle-type-buttons"
+						"speed speed speed shuffle-type-buttons shuffle-type-buttons"
+						"hide shuffle restart pause start";
+					padding: 1.5rem;
+				}
+			}
+			@media (max-width: 560px) {
+				.container {
+					grid-template: 1fr 1fr 2fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+					grid-template-areas:
+						"size size size size"
+						"speed speed speed speed"
+						"shuffle-type-buttons shuffle-type-buttons shuffle-type-buttons shuffle-type-buttons"
+						"shuffle shuffle restart restart"
+						"pause pause start start"
+						"hide hide hide hide";
+				}
+				.shuffle-container {
+					padding: 0 5rem;
+				}
+			}
+			@media (max-width: 400px) {
+				.shuffle-container {
+					padding: 0 2rem;
+				}
+			}
+			@media (max-width: 300px) {
+				.shuffle-container {
+					padding: 0;
+				}
+				.num-field {
+					width: 2rem;
 				}
 			}
 		`}
@@ -159,7 +237,7 @@ export const StyledSortSettingsShown = styled.div`
 				max-width: min(1200px, 100%);
 				display: flex;
 				justify-content: left;
-				padding: 0.5rem 0;
+				padding: 1.5rem 0;
 			}
 			div {
 				width: fit-content;
@@ -171,9 +249,10 @@ export const StyledSortSettingsShown = styled.div`
 				border: none;
 				color: ${(props) => props.theme.colors.main};
 				display: flex;
-				flex-direction: column;
+				/* flex-direction: column; */
 				align-items: center;
 				justify-content: center;
+
 				&:hover {
 					color: ${(props) => props.theme.colors.light};
 					transform: scale(1.2);
@@ -194,6 +273,7 @@ export const StyledSortSettingsShown = styled.div`
 					align-items: center;
 					background: ${(props) => props.theme.colors.dark};
 					border: none;
+					justify-content: center;
 					color: ${(props) => props.theme.colors.main};
 					font-family: ${(props) => props.theme.fonts.main};
 					border: 1px solid ${(props) => props.theme.colors.main};
@@ -204,6 +284,33 @@ export const StyledSortSettingsShown = styled.div`
 						color: ${(props) => props.theme.colors.dark};
 						border: 1px solid ${(props) => props.theme.colors.dark};
 					}
+				}
+			}
+			@media (max-width: 600px) {
+				.container {
+					margin-top: 2rem;
+					width: 100%;
+					display: grid;
+					grid-template: 1fr 1fr 1fr / 1fr 1fr;
+					grid-template-areas:
+						" shuffle pause"
+						" restart start"
+						"hide hide";
+					gap: 2rem;
+					padding: 2rem 2rem 0.5rem;
+					box-sizing: border-box;
+				}
+				.cntrl-btn,
+				.cntrl-btn button {
+					width: 100%;
+					height: 100%;
+					box-sizing: border-box;
+					padding: 0;
+				}
+			}
+			@media (max-width: 360px) {
+				.container {
+					gap: 1rem;
 				}
 			}
 		`}

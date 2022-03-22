@@ -41,6 +41,11 @@ const DescreptionStyled = styled.div`
 	img {
 		display: block;
 		margin: 3.5rem auto;
+		max-width: 100%;
+		background: ${(props) => props.theme.colors.absoluteLight};
+	}
+	ol img {
+		margin-left: -2rem;
 	}
 `;
 

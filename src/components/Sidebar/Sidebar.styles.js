@@ -3,9 +3,7 @@ import styled from "styled-components";
 const SidebarStyled = styled.div`
 	width: 100%;
 	height: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
-
+	overflow-y: auto;
 	&::-webkit-scrollbar {
 		width: 5px;
 	}
@@ -19,6 +17,7 @@ const SidebarStyled = styled.div`
 	}
 
 	.sort-container {
+		box-sizing: border-box;
 		height: fit-content;
 		width: 100%;
 		display: flex;
@@ -39,14 +38,14 @@ const SidebarStyled = styled.div`
 		background: ${(props) => props.theme.colors.main};
 		border: none;
 		font-family: ${(props) => props.theme.fonts.main};
-		color: ${(props) => props.theme.colors.dark};
+		color: ${(props) => props.theme.colors.light};
 		text-transform: uppercase;
 		font-size: 1.2rem;
 		margin: 0.3rem;
 		border: 1px solid ${(props) => props.theme.colors.main};
 
 		&:hover {
-			background: ${(props) => props.theme.colors.dark};
+			background: ${(props) => props.theme.colors.light};
 			color: ${(props) => props.theme.colors.main};
 			border: 1px solid ${(props) => props.theme.colors.main};
 		}
@@ -62,32 +61,35 @@ const SidebarStyled = styled.div`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: ${(props) => props.theme.colors.dark};
+		background: ${(props) => props.theme.colors.light};
 		color: ${(props) => props.theme.colors.main};
 		border: 1px solid ${(props) => props.theme.colors.main};
 
 		&:hover {
 			background: ${(props) => props.theme.colors.main};
-			color: ${(props) => props.theme.colors.dark};
-			border: 1px solid ${(props) => props.theme.colors.dark};
+			color: ${(props) => props.theme.colors.light};
+			border: 1px solid ${(props) => props.theme.colors.main};
 		}
 	}
 
 	.add-btn {
-		padding: 0;
 		margin: 0;
 		border: none;
-		background: ${(props) => props.theme.colors.dark};
-
+		/* background: ${(props) => props.theme.colors.light}; */
 		.sort-add {
+			padding: 0.2rem 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			border: none;
-			width: 70%;
+			width: 100%;
 			height: 100%;
-			margin: 0 auto;
-			background: ${(props) => props.theme.colors.dark};
+			margin: 0;
+			/* background: ${(props) => props.theme.colors.dark}; */
+			background: none;
 			color: ${(props) => props.theme.colors.main};
 			&:hover {
-				color: ${(props) => props.theme.colors.light};
+				color: ${(props) => props.theme.colors.dark};
 				transform: scale(1.2);
 			}
 		}

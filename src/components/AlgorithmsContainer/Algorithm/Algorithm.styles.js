@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const AlgorithmStyled = styled.div`
-	background-color: ${(props) => props.theme.colors.dark};
-	color: ${(props) => props.theme.colors.light};
+	background-color: ${(props) => props.theme.colors.light};
+	color: ${(props) => props.theme.colors.dark};
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -28,7 +28,7 @@ const AlgorithmStyled = styled.div`
 		margin: 0 auto;
 	}
 	.node-coloured {
-		background: ${(props) => props.theme.colors.light};
+		background: ${(props) => props.theme.colors.dark};
 		width: 100%;
 	}
 	.node-arrow {

@@ -270,26 +270,14 @@ function DescList({ description, changeDescription }) {
 							<button
 								onClick={handleClick}
 								className={`btn-desc-name ${
-									description === "HeapSortMin"
+									description === "HeapSortMin" ||
+									description === "HeapSortMax"
 										? "active"
 										: null
 								}`}
 								name={"HeapSortMin"}
 							>
-								{deCamelCase("HeapSortMin")}
-							</button>
-						</li>
-						<li>
-							<button
-								onClick={handleClick}
-								className={`btn-desc-name ${
-									description === "HeapSortMax"
-										? "active"
-										: null
-								}`}
-								name={"HeapSortMax"}
-							>
-								{deCamelCase("HeapSortMax")}
+								{deCamelCase("HeapSort")}
 							</button>
 						</li>
 					</ul>
@@ -475,19 +463,6 @@ function DescList({ description, changeDescription }) {
 								{deCamelCase("RadixSort")}
 							</button>
 						</li>
-						<li>
-							<button
-								onClick={handleClick}
-								className={`btn-desc-name ${
-									description === "RadixSortLSD"
-										? "active"
-										: null
-								}`}
-								name={"RadixSortLSD"}
-							>
-								{deCamelCase("RadixSortLSD")}
-							</button>
-						</li>
 					</ul>
 				) : null}
 				<LiWithMarker
@@ -635,6 +610,58 @@ function DescList({ description, changeDescription }) {
 								name={"BubbleBogoSort"}
 							>
 								{deCamelCase("BubbleBogoSort")}
+							</button>
+						</li>
+						<li>
+							<button
+								onClick={handleClick}
+								className={`btn-desc-name ${
+									description === "BogoBogoSort"
+										? "active"
+										: null
+								}`}
+								name={"BogoBogoSort"}
+							>
+								{deCamelCase("BogoBogoSort")}
+							</button>
+						</li>
+						<li>
+							<button
+								onClick={handleClick}
+								className={`btn-desc-name ${
+									description === "QuantumBogoSort"
+										? "active"
+										: null
+								}`}
+								name={"QuantumBogoSort"}
+							>
+								{deCamelCase("QuantumBogoSort")}
+							</button>
+						</li>
+						<li>
+							<button
+								onClick={handleClick}
+								className={`btn-desc-name ${
+									description === "IntelligentDesignSort"
+										? "active"
+										: null
+								}`}
+								name={"IntelligentDesignSort"}
+							>
+								{deCamelCase("IntelligentDesignSort")}
+							</button>
+						</li>
+						<li>
+							<button
+								onClick={handleClick}
+								className={`btn-desc-name ${
+									description === "FaithSort"
+										? "active"
+										: null
+								}`}
+								name={"FaithSort"}
+							>
+								{deCamelCase("FaithSort")}
 							</button>
 						</li>
 					</ul>

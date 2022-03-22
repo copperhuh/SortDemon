@@ -1,14 +1,14 @@
 import React from "react";
 import { doShuffle } from "../../redux/Actions";
 import { connect } from "react-redux";
-import SettingsShown from "./SettingsShown";
+import Settings from "./Settings";
 
 const SortSettings = ({ shuffle }) => {
 	shuffle();
 
 	return (
 		<>
-			<SettingsShown shuffle={shuffle} />
+			<Settings shuffle={shuffle} />
 		</>
 	);
 };

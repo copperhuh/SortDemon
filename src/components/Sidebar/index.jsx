@@ -49,9 +49,14 @@ function Sidebar({ algorithms, removeAlgorithm, changeDescription, descRef }) {
 			<SidebarStyled>
 				{elements}
 				<div className="sort-container add-btn">
-					<button onClick={() => setOpen(true)} className="sort-add">
-						<AddIcon sx={{ fontSize: 50 }} />
-					</button>
+					<div className="btns">
+						<button
+							onClick={() => setOpen(true)}
+							className="sort-add"
+						>
+							<AddIcon sx={{ fontSize: 50 }} />
+						</button>
+					</div>
 				</div>
 			</SidebarStyled>
 			<AddAlgoModal open={open} setOpen={setOpen} />
