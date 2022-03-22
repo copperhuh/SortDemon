@@ -12,9 +12,14 @@ const GlobalStyles = createGlobalStyle`
 html, body{
   max-width: 100%;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 button{
   user-select: none;
+}
+.open-modal-1, .open-modal-2{
+  overflow: hidden;
+  padding-right: 10px !important;
 }
 button, a{
   transition: all 0.2s;

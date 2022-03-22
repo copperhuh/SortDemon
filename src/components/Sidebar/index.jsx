@@ -7,7 +7,13 @@ import AddAlgoModal from "./AddAlgoModal";
 import { connect } from "react-redux";
 import { doChangeDescription, doRemoveAlgorithm } from "../../redux/Actions";
 
-function Sidebar({ algorithms, removeAlgorithm, changeDescription, descRef }) {
+function Sidebar({
+	algorithms,
+	removeAlgorithm,
+	changeDescription,
+	descRef,
+	hiddenSidebarSetOpen,
+}) {
 	const [open, setOpen] = React.useState(false);
 
 	let elements = algorithms.map((el, id) => {
@@ -33,14 +39,15 @@ function Sidebar({ algorithms, removeAlgorithm, changeDescription, descRef }) {
 
 	const handleClick = (name) => {
 		changeDescription(name);
+		if (hiddenSidebarSetOpen !== undefined) hiddenSidebarSetOpen(false);
 		descRef.current.scrollIntoView();
 	};
 
 	React.useEffect(() => {
 		if (open) {
-			document.body.style.overflow = "hidden";
+			document.body.classList.add("open-modal-1");
 		} else {
-			document.body.style.overflow = "visible";
+			document.body.classList.remove("open-modal-1");
 		}
 	}, [open]);
 

@@ -89,7 +89,7 @@ const SidebarStyled = styled.div`
 			background: none;
 			color: ${(props) => props.theme.colors.main};
 			&:hover {
-				color: ${(props) => props.theme.colors.dark};
+				/* color: ${(props) => props.theme.colors.dark}; */
 				transform: scale(1.2);
 			}
 		}

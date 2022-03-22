@@ -6,7 +6,6 @@ const useIntersection = (element, rootMargin) => {
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				console.log(entry);
 				setState(entry.isIntersecting);
 			},
 			{ rootMargin }
