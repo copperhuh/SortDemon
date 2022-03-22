@@ -47,6 +47,10 @@ const DescreptionStyled = styled.div`
 	ol img {
 		margin-left: -2rem;
 	}
+	@media (max-width: 900px) {
+		padding: 2rem 0;
+		margin: 0;
+	}
 `;
 
 export default DescreptionStyled;

@@ -5,7 +5,6 @@ const DescListStyled = styled.div`
 	ul {
 		list-style: none;
 	}
-
 	button {
 		background: none;
 		border: none;
@@ -21,6 +20,7 @@ const DescListStyled = styled.div`
 		font-size: 1.1rem;
 		margin: 0.5rem 0;
 		letter-spacing: 0.7px;
+		padding-right: 1.2rem;
 	}
 
 	.btn-desc-name {
@@ -30,6 +30,10 @@ const DescListStyled = styled.div`
 
 	.active {
 		color: ${(props) => props.theme.colors.main};
+	}
+	@media (max-width: 290px) {
+		padding-left: 0;
+		padding-right: 0;
 	}
 `;
 

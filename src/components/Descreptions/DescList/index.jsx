@@ -21,7 +21,12 @@ const LiWithMarker = styled.li`
 	}
 `;
 
-function DescList({ description, changeDescription }) {
+function DescList({
+	descRef,
+	description,
+	changeDescription,
+	hiddenDescListSetOpen,
+}) {
 	const [open, setOpen] = React.useState({
 		exchange: false,
 		quick: false,
@@ -42,7 +47,9 @@ function DescList({ description, changeDescription }) {
 	};
 
 	const handleClick = (e) => {
+		if (hiddenDescListSetOpen !== undefined) hiddenDescListSetOpen(false);
 		changeDescription(e.target.name);
+		descRef.current.scrollIntoView();
 	};
 
 	return (
@@ -673,6 +680,7 @@ function DescList({ description, changeDescription }) {
 
 const props = (state) => ({
 	description: state.description,
+	descRef: state.descRef,
 });
 
 const actions = (dispatch) => ({

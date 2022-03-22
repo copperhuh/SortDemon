@@ -9,6 +9,9 @@ import { store } from "./redux/Store";
 import Descriptions from "./components/Descreptions/Container";
 
 const GlobalStyles = createGlobalStyle`
+*{
+  box-sizing: border-box;
+}
 html, body{
   max-width: 100%;
   scroll-behavior: smooth;

@@ -11,13 +11,9 @@ function Main({ algorithms }) {
 
 	React.useEffect(() => {
 		if (open) {
-			// document.body.style.paddingRight = "10px";
-			// document.body.style.overflow = "hidden";
 			document.body.classList.add("open-modal-2");
 		} else {
 			document.body.classList.remove("open-modal-2");
-			// document.body.style.paddingRight = "0";
-			// document.body.style.overflow = "visible";
 		}
 	}, [open]);
 
