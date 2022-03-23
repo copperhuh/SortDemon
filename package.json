@@ -1,7 +1,7 @@
 {
 	"name": "sort-demonstration",
 	"version": "0.1.0",
-	"homepage": "https://copperhuh.github.io/SortDemonstration/",
+	"homepage": "https://copperhuh.github.io/SortDemon/",
 	"private": true,
 	"dependencies": {
 		"@emotion/react": "^11.8.1",
