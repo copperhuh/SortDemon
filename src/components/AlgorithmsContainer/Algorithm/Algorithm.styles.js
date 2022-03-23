@@ -4,6 +4,8 @@ const AlgorithmStyled = styled.div`
 	background-color: ${(props) => props.theme.colors.light};
 	color: ${(props) => props.theme.colors.dark};
 	display: flex;
+	min-height: 300px;
+	min-width: 220px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
@@ -38,6 +40,9 @@ const AlgorithmStyled = styled.div`
 	}
 	.active {
 		background: ${(props) => props.theme.colors.main};
+	}
+	@media (max-width: 450px) {
+		padding: 0;
 	}
 `;
 

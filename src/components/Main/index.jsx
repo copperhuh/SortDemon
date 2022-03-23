@@ -6,8 +6,9 @@ import MainContainer from "./Main.styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import HiddenSidebar from "../Sidebar/HiddenSidebar";
 
-function Main({ algorithms }) {
+function Main({ algorithms, width }) {
 	const [open, setOpen] = React.useState(false);
+	const [height, setHeight] = React.useState(0);
 
 	React.useEffect(() => {
 		if (open) {
@@ -18,17 +19,24 @@ function Main({ algorithms }) {
 	}, [open]);
 
 	return (
-		<MainContainer>
+		<MainContainer height={height}>
 			<div className="algo-container">
-				<AlgorithmsContainer algorithms={algorithms} />
+				<AlgorithmsContainer
+					setHeight={setHeight}
+					width={width}
+					algorithms={algorithms}
+				/>
 			</div>
-			<button onClick={() => setOpen(true)} className="open-sidebar">
-				<MenuIcon sx={{ fontSize: "2.7rem" }} />
-			</button>
-			{/* 
-			<div className="sidebar">
-				<Sidebar algorithms={algorithms} />
-			</div> */}
+
+			{width > 1710 ? (
+				<div className="sidebar">
+					<Sidebar algorithms={algorithms} />
+				</div>
+			) : (
+				<button onClick={() => setOpen(true)} className="open-sidebar">
+					<MenuIcon sx={{ fontSize: "2.7rem" }} />
+				</button>
+			)}
 			{open && (
 				<HiddenSidebar setOpen={setOpen} algorithms={algorithms} />
 			)}

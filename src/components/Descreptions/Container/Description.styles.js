@@ -50,6 +50,12 @@ const DescreptionStyled = styled.div`
 	@media (max-width: 900px) {
 		padding: 2rem 0;
 		margin: 0;
+		margin-left: -1.5rem;
+
+		/* z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0; */
 	}
 `;
 

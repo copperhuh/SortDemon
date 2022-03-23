@@ -1,7 +1,7 @@
 import React from "react";
 import CodeComponent from "../CodeComponent";
 
-export default function BubbleSort() {
+export default function BubbleSort(setHeight) {
 	return (
 		<>
 			<h2 id="bubble-sort">Bubble Sort</h2>

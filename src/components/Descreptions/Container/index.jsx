@@ -10,7 +10,7 @@ import useIntersection from "../../../hooks/useIntersection";
 import MenuIcon from "@mui/icons-material/Menu";
 import HiddenDescList from "./HiddenDescList";
 
-function Descriptions({ description, setDescRef }) {
+function Descriptions({ description, setDescRef, width }) {
 	const descRef = React.useRef(null);
 	const desc = getDescription(description);
 	const [open, setOpen] = React.useState(false);
@@ -28,16 +28,18 @@ function Descriptions({ description, setDescRef }) {
 	}, [open]);
 
 	const inViewport = useIntersection(descRef, "-200px"); // Trigger if 200px is visible from the element
-
 	return (
 		<DescContainer buttonVisible={inViewport}>
-			{/* <div className="desc-list">
-				<DescList />
-			</div> */}
 			{open && <HiddenDescList setOpen={setOpen} />}
-			<button onClick={() => setOpen(true)} className="open-list">
-				<MenuIcon sx={{ fontSize: "2.4rem" }} />
-			</button>
+			{width > 1350 ? (
+				<div className="desc-list">
+					<DescList />
+				</div>
+			) : (
+				<button onClick={() => setOpen(true)} className="open-list">
+					<MenuIcon sx={{ fontSize: "2.4rem" }} />
+				</button>
+			)}
 			<div ref={descRef} className="desc-content">
 				<DescreptionStyled>{desc}</DescreptionStyled>
 			</div>

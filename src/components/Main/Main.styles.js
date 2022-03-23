@@ -3,7 +3,7 @@ import styled from "styled-components";
 const MainContainer = styled.div`
 	display: flex;
 	width: 100%;
-	height: 100vh;
+	height: fit-content;
 	padding: 3rem 0;
 	background-color: ${(props) => props.theme.colors.light};
 	position: relative;
@@ -33,6 +33,9 @@ const MainContainer = styled.div`
 			color: ${(props) => props.theme.colors.light};
 			border: 1px solid ${(props) => props.theme.colors.light};
 		}
+	}
+	@media (max-width: 450px) {
+		height: ${(props) => props.height};
 	}
 `;
 

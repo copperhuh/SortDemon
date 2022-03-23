@@ -103,8 +103,8 @@ function App() {
 
 				<Header theme={themeVariation} toggleTheme={toggleTheme} />
 				<SortSettings />
-				<Main />
-				<Descriptions />
+				<Main width={width} />
+				<Descriptions width={width} />
 			</Provider>
 		</Theme>
 	);
