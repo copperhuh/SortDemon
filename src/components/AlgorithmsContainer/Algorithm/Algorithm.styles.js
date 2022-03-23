@@ -21,6 +21,7 @@ const AlgorithmStyled = styled.div`
 		width: 80%;
 		display: flex;
 		justify-content: flex-end;
+		flex: 1;
 	}
 	.node-container {
 		display: flex;
@@ -33,11 +34,11 @@ const AlgorithmStyled = styled.div`
 		background: ${(props) => props.theme.colors.dark};
 		width: 100%;
 	}
-	.node-arrow {
+	/* .node-arrow {
 		width: 100%;
 		height: fit-content;
 		text-align: center;
-	}
+	} */
 	.active {
 		background: ${(props) => props.theme.colors.main};
 	}

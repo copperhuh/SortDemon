@@ -27,7 +27,7 @@ function Descriptions({ description, setDescRef, width }) {
 		}
 	}, [open]);
 
-	const inViewport = useIntersection(descRef, "-200px"); // Trigger if 200px is visible from the element
+	const inViewport = useIntersection(descRef, "-120px");
 	return (
 		<DescContainer buttonVisible={inViewport}>
 			{open && <HiddenDescList setOpen={setOpen} />}
