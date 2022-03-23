@@ -10,29 +10,29 @@ import Descriptions from "./components/Descreptions/Container";
 import Footer from "./components/Footer";
 
 const GlobalStyles = createGlobalStyle`
-*{
-  box-sizing: border-box;
-}
-html, body{
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-width: 100%;
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-}
-button{
-  user-select: none;
-}
-.open-modal-1, .open-modal-2{
-  overflow: hidden;
-  padding-right: 10px !important;
-}
-button, a{
-  transition: all 0.2s;
-  
-  &:hover, &:focus, a{
-    transition: all 0.2s;
+  *{
+    box-sizing: border-box;
   }
+  html, body{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  }
+  button{
+    user-select: none;
+  }
+  .open-modal-1, .open-modal-2{
+    overflow: hidden;
+    padding-right: 10px !important;
+  }
+  button, a{
+    transition: all 0.2s;
+    
+    &:hover, &:focus, a{
+      transition: all 0.2s;
+    }
   }
   body {
     margin: 0;

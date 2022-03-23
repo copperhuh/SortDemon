@@ -14,6 +14,7 @@ const AlgorithmStyled = styled.div`
 	h1 {
 		font-size: ${(props) =>
 			props.len < 4 ? "2rem" : props.len < 7 ? "1.3rem" : "1rem"};
+		text-align: center;
 	}
 
 	.nodes {
