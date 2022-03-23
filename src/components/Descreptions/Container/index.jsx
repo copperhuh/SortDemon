@@ -44,7 +44,7 @@ function Descriptions({ description, setDescRef, width }) {
 				<DescreptionStyled>{desc}</DescreptionStyled>
 			</div>
 			<button
-				onClick={() => window.scrollTo({ top: 0 })}
+				onClick={() => document.getElementById("root").scrollIntoView()}
 				className="scroll-top"
 			>
 				<ArrowUpwardIcon sx={{ fontSize: "2.4rem" }} />

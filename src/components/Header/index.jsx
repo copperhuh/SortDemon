@@ -9,9 +9,11 @@ export default function Header({ theme, toggleTheme }) {
 		<StyledHeader>
 			<span>SORT DEMON</span>
 			<div className="btns">
-				<button>
-					<GitHubIcon sx={{ fontSize: "2.4rem" }} />
-				</button>
+				<a href="https://github.com/copperhuh/SortDemon">
+					<button>
+						<GitHubIcon sx={{ fontSize: "2.4rem" }} />
+					</button>
+				</a>
 				<button>
 					<InfoIcon sx={{ fontSize: "2.4rem" }} />
 				</button>

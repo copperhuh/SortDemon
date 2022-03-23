@@ -199,14 +199,14 @@ export const StyledSortSettingsShown = styled.div`
 			}
 			@media (max-width: 560px) {
 				.container {
-					grid-template: 1fr 1fr 2fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+					grid-template: 1fr 1fr 2fr 1fr 1fr/ 1fr 1fr;
 					grid-template-areas:
-						"size size size size"
-						"speed speed speed speed"
-						"shuffle-type-buttons shuffle-type-buttons shuffle-type-buttons shuffle-type-buttons"
-						"shuffle shuffle restart restart"
-						"pause pause start start"
-						"hide hide hide hide";
+						"size size"
+						"speed speed "
+						"shuffle-type-buttons shuffle-type-buttons"
+						"shuffle pause"
+						"restart start"
+						"hide hide";
 				}
 				.shuffle-container {
 					padding: 0 5rem;

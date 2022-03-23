@@ -7,6 +7,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { store } from "./redux/Store";
 import Descriptions from "./components/Descreptions/Container";
+import Footer from "./components/Footer";
 
 const GlobalStyles = createGlobalStyle`
 *{
@@ -107,6 +108,7 @@ function App() {
 				<SortSettings />
 				<Main width={width} />
 				<Descriptions width={width} />
+				<Footer />
 			</Provider>
 		</Theme>
 	);
