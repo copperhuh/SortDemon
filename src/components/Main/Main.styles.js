@@ -4,12 +4,13 @@ const MainContainer = styled.div`
 	display: flex;
 	width: 100%;
 	height: fit-content;
+	min-height: 100vh;
 	padding: 3rem 0;
 	background-color: ${(props) => props.theme.colors.light};
 	position: relative;
 
 	.algo-container {
-		height: 100%;
+		min-height: 100%;
 		flex: 1;
 	}
 	.sidebar {

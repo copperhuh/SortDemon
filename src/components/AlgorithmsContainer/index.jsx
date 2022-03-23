@@ -1,11 +1,10 @@
 import * as React from "react";
-import { connect } from "react-redux";
 import Alogrithm from "./Algorithm";
 import Container from "./AlgorithmsContainer.styles";
 
-const AlgorithmsContainer = ({ algorithms, len }) => {
+const AlgorithmsContainer = ({ algorithms }) => {
 	return (
-		<Container len={len}>
+		<Container>
 			{algorithms.map((el, id) => (
 				<Alogrithm key={id} sortingMethod={el} />
 			))}
@@ -13,8 +12,4 @@ const AlgorithmsContainer = ({ algorithms, len }) => {
 	);
 };
 
-const props = (state) => ({
-	len: state.algorithms.length,
-});
-
-export default connect(props, null)(AlgorithmsContainer);
+export default AlgorithmsContainer;

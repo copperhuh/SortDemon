@@ -13,6 +13,8 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 html, body{
+  overflow-x: hidden;
+  overflow-y: auto;
   max-width: 100%;
   scroll-behavior: smooth;
   box-sizing: border-box;
