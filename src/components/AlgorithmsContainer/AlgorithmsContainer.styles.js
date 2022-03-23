@@ -23,9 +23,9 @@ const Container = styled.div`
 	);
 	gap: ${(props) => (props.len > 6 ? "1rem" : "2rem")};
 	@media (max-width: 450px) {
-		position: absolute;
+		/* position: absolute;
 		top: 0;
-		left: 0;
+		left: 0; */
 		width: 100%;
 		grid-template-columns: 1fr;
 		padding: 3rem 0;

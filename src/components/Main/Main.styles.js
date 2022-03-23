@@ -28,15 +28,16 @@ const MainContainer = styled.div`
 		background: ${(props) => props.theme.colors.light};
 		color: ${(props) => props.theme.colors.main};
 		border: 1px solid ${(props) => props.theme.colors.main};
+		float: left;
 		:hover {
 			background: ${(props) => props.theme.colors.main};
 			color: ${(props) => props.theme.colors.light};
 			border: 1px solid ${(props) => props.theme.colors.light};
 		}
 	}
-	@media (max-width: 450px) {
+	/* @media (max-width: 450px) {
 		height: ${(props) => props.height};
-	}
+	} */
 `;
 
 export default MainContainer;

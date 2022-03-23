@@ -42,11 +42,12 @@ const DescContainer = styled.div`
 	}
 	.open-list {
 		display: flex;
-		margin: 5rem 0;
+		margin: 2rem 0;
 		top: 5rem;
 		left: 5rem;
 		width: fit-content;
 		position: sticky;
+		float: left;
 	}
 	@media (max-width: 900px) {
 		.open-list {

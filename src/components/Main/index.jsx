@@ -8,7 +8,6 @@ import HiddenSidebar from "../Sidebar/HiddenSidebar";
 
 function Main({ algorithms, width }) {
 	const [open, setOpen] = React.useState(false);
-	const [height, setHeight] = React.useState(0);
 
 	React.useEffect(() => {
 		if (open) {
@@ -19,13 +18,9 @@ function Main({ algorithms, width }) {
 	}, [open]);
 
 	return (
-		<MainContainer height={height}>
+		<MainContainer>
 			<div className="algo-container">
-				<AlgorithmsContainer
-					setHeight={setHeight}
-					width={width}
-					algorithms={algorithms}
-				/>
+				<AlgorithmsContainer width={width} algorithms={algorithms} />
 			</div>
 
 			{width > 1710 ? (
