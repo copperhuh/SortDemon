@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/SortDemon/static/js/main.2f3a4b8b.js",
+    "main.js": "/SortDemon/static/js/main.ba82973d.js",
     "react-syntax-highlighter/refractor-core-import.js": "/SortDemon/static/js/react-syntax-highlighter/refractor-core-import.3db673b0.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js": "/SortDemon/static/js/react-syntax-highlighter_languages_refractor_abap.d522b6e8.chunk.js",
     "react-syntax-highlighter_languages_refractor_actionscript.js": "/SortDemon/static/js/react-syntax-highlighter_languages_refractor_actionscript.0dff2217.chunk.js",
@@ -155,7 +155,7 @@
     "react-syntax-highlighter_languages_refractor_yaml.js": "/SortDemon/static/js/react-syntax-highlighter_languages_refractor_yaml.e6143ac3.chunk.js",
     "static/js/787.09bff820.chunk.js": "/SortDemon/static/js/787.09bff820.chunk.js",
     "index.html": "/SortDemon/index.html",
-    "main.2f3a4b8b.js.map": "/SortDemon/static/js/main.2f3a4b8b.js.map",
+    "main.ba82973d.js.map": "/SortDemon/static/js/main.ba82973d.js.map",
     "refractor-core-import.3db673b0.chunk.js.map": "/SortDemon/static/js/react-syntax-highlighter/refractor-core-import.3db673b0.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.d522b6e8.chunk.js.map": "/SortDemon/static/js/react-syntax-highlighter_languages_refractor_abap.d522b6e8.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_actionscript.0dff2217.chunk.js.map": "/SortDemon/static/js/react-syntax-highlighter_languages_refractor_actionscript.0dff2217.chunk.js.map",
@@ -311,6 +311,6 @@
     "787.09bff820.chunk.js.map": "/SortDemon/static/js/787.09bff820.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.2f3a4b8b.js"
+    "static/js/main.ba82973d.js"
   ]
 }
