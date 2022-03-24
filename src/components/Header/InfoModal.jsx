@@ -19,9 +19,9 @@ export default function InfoModal({ open, setOpen }) {
 			{open && (
 				<InfoModalStyled ref={outside} onClick={onClose}>
 					<motion.div
-						animate={{ x: 0 }}
-						initial={{ x: "-50vw" }}
-						exit={{ x: "100vw" }}
+						animate={{ y: 0 }}
+						initial={{ y: "-50vh" }}
+						exit={{ y: "-100vh" }}
 						transition={{ ease: "easeOut", duration: 0.1 }}
 						className="modal-bg"
 					>

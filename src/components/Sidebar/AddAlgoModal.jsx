@@ -94,9 +94,9 @@ function AddAlgoModal({ open, setOpen, addAlgorithm }) {
 	return ReactDOM.createPortal(
 		<ModalStyled ref={outside} onClick={onCloseFromBg}>
 			<motion.div
-				animate={{ x: 0 }}
-				initial={{ x: "-50vw" }}
-				transition={{ ease: "easeIn", duration: 0.02 }}
+				animate={{ y: 0 }}
+				initial={{ y: "-100vh" }}
+				transition={{ ease: "easeIn", duration: 0.002 }}
 				className="modal-container"
 			>
 				<button onClick={onClose} className="close-modal">
