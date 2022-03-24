@@ -20,8 +20,8 @@ export default function HiddenDescList({ open, setOpen }) {
 				<HiddenDescListStyled ref={outside} onClick={onClose}>
 					<motion.div
 						animate={{ x: 0 }}
-						initial={{ x: "-50vw" }}
-						exit={{ x: "-50vw" }}
+						initial={{ x: "-100vw" }}
+						exit={{ x: "-100vw" }}
 						transition={{ ease: "easeOut", duration: 0.3 }}
 						className="modal-bg"
 					>
