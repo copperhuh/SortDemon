@@ -4,6 +4,7 @@ import DescListStyled from "./DescList.styles";
 import { deCamelCase } from "../../../utils";
 import { connect } from "react-redux";
 import { doChangeDescription } from "../../../redux/Actions";
+import AnimateHeight from "react-animate-height";
 
 const LiWithMarker = styled.li`
 	position: relative;
@@ -28,22 +29,30 @@ function DescList({
 	hiddenDescListSetOpen,
 }) {
 	const [open, setOpen] = React.useState({
-		exchange: false,
-		quick: false,
-		selection: false,
-		insertion: false,
-		merge: false,
-		distribution: false,
-		concurrent: false,
-		miscellaneous: false,
-		impractical: false,
+		exchange: 0,
+		quick: 0,
+		selection: 0,
+		insertion: 0,
+		merge: 0,
+		distribution: 0,
+		concurrent: 0,
+		miscellaneous: 0,
+		impractical: 0,
 	});
 
 	const toggleOpen = (e) => {
-		setOpen((prevOpen) => ({
-			...prevOpen,
-			[e.target.name]: !prevOpen[e.target.name],
-		}));
+		const name = e.target.name;
+		if (open[name] === "auto") {
+			setOpen((prevOpen) => ({
+				...prevOpen,
+				[e.target.name]: 0,
+			}));
+		} else {
+			setOpen((prevOpen) => ({
+				...prevOpen,
+				[e.target.name]: "auto",
+			}));
+		}
 	};
 
 	const handleClick = (e) => {
@@ -68,7 +77,11 @@ function DescList({
 						EXCHANGE SORTS
 					</button>
 				</LiWithMarker>
-				{open.exchange ? (
+				<AnimateHeight
+					id="exchange"
+					duration={200}
+					height={open.exchange}
+				>
 					<ul>
 						<li>
 							<button
@@ -173,7 +186,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 				<LiWithMarker
 					open={open.quick}
 					className="li-subtitle"
@@ -187,7 +200,7 @@ function DescList({
 						QUICK SORTS
 					</button>
 				</LiWithMarker>
-				{open.quick ? (
+				<AnimateHeight id="quick" duration={200} height={open.quick}>
 					<ul>
 						<li>
 							<button
@@ -218,7 +231,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 				<LiWithMarker
 					open={open.selection}
 					className="li-subtitle"
@@ -232,7 +245,11 @@ function DescList({
 						SELECTION SORTS
 					</button>
 				</LiWithMarker>
-				{open.selection ? (
+				<AnimateHeight
+					id="selection"
+					duration={200}
+					height={open.selection}
+				>
 					<ul>
 						<li>
 							<button
@@ -288,7 +305,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 				<LiWithMarker
 					open={open.insertion}
 					className="li-subtitle"
@@ -302,7 +319,11 @@ function DescList({
 						INSERTION SORTS
 					</button>
 				</LiWithMarker>
-				{open.insertion ? (
+				<AnimateHeight
+					id="insertion"
+					duration={200}
+					height={open.insertion}
+				>
 					<ul>
 						<li>
 							<button
@@ -344,7 +365,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 				<LiWithMarker
 					open={open.merge}
 					className="li-subtitle"
@@ -358,7 +379,7 @@ function DescList({
 						MERGE SORTS
 					</button>
 				</LiWithMarker>
-				{open.merge ? (
+				<AnimateHeight id="merge" duration={200} height={open.merge}>
 					<ul>
 						<li>
 							<button
@@ -387,7 +408,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 				<LiWithMarker
 					open={open.distribution}
 					className="li-subtitle"
@@ -401,7 +422,11 @@ function DescList({
 						DISTRIBUTION SORTS
 					</button>
 				</LiWithMarker>
-				{open.distribution ? (
+				<AnimateHeight
+					id="distribution"
+					duration={200}
+					height={open.distribution}
+				>
 					<ul>
 						<li>
 							<button
@@ -471,7 +496,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 				<LiWithMarker
 					open={open.concurrent}
 					className="li-subtitle"
@@ -485,7 +510,11 @@ function DescList({
 						CONCURRENT SORTS
 					</button>
 				</LiWithMarker>
-				{open.concurrent ? (
+				<AnimateHeight
+					id="concurrent"
+					duration={200}
+					height={open.concurrent}
+				>
 					<ul>
 						<li>
 							<button
@@ -527,7 +556,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 				<LiWithMarker
 					open={open.miscellaneous}
 					className="li-subtitle"
@@ -541,7 +570,11 @@ function DescList({
 						MISCELLANEOUS SORTS
 					</button>
 				</LiWithMarker>
-				{open.miscellaneous ? (
+				<AnimateHeight
+					id="miscellaneous"
+					duration={200}
+					height={open.miscellaneous}
+				>
 					<ul>
 						<li>
 							<button
@@ -568,7 +601,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 				<LiWithMarker
 					open={open.impractical}
 					className="li-subtitle"
@@ -582,7 +615,11 @@ function DescList({
 						IMPRACTICAL SORTS
 					</button>
 				</LiWithMarker>
-				{open.impractical ? (
+				<AnimateHeight
+					id="impractical"
+					duration={200}
+					height={open.impractical}
+				>
 					<ul>
 						<li>
 							<button
@@ -672,7 +709,7 @@ function DescList({
 							</button>
 						</li>
 					</ul>
-				) : null}
+				</AnimateHeight>
 			</ul>
 		</DescListStyled>
 	);

@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import Sidebar from ".";
 import HiddenSidebarStyled from "./HiddenSidebar.styles";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function HiddenSidebar({ algorithms, setOpen }) {
+export default function HiddenSidebar({ algorithms, open, setOpen }) {
 	const outside = React.useRef(null);
 
 	function onClose(e) {
@@ -14,20 +15,33 @@ export default function HiddenSidebar({ algorithms, setOpen }) {
 	}
 
 	return ReactDOM.createPortal(
-		<HiddenSidebarStyled ref={outside} onClick={onClose}>
-			<div className="sidebar-bg">
-				<button
-					onClick={() => setOpen(false)}
-					className="close-sidebar"
-				>
-					<CloseIcon sx={{ fontSize: "2.7rem" }} />
-				</button>
-				<Sidebar
-					hiddenSidebarSetOpen={setOpen}
-					algorithms={algorithms}
-				/>
-			</div>
-		</HiddenSidebarStyled>,
+		<AnimatePresence>
+			{open && (
+				<HiddenSidebarStyled ref={outside} onClick={onClose}>
+					<motion.div
+						animate={{ x: 0 }}
+						initial={{ x: "50vw" }}
+						exit={{ x: "50vw" }}
+						transition={{
+							ease: "easeOut",
+							duration: 0.25,
+						}}
+						className="sidebar-bg"
+					>
+						<button
+							onClick={() => setOpen(false)}
+							className="close-sidebar"
+						>
+							<CloseIcon sx={{ fontSize: "2.7rem" }} />
+						</button>
+						<Sidebar
+							hiddenSidebarSetOpen={setOpen}
+							algorithms={algorithms}
+						/>
+					</motion.div>
+				</HiddenSidebarStyled>
+			)}
+		</AnimatePresence>,
 		document.getElementById("portal")
 	);
 }

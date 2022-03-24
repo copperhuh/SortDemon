@@ -75,6 +75,7 @@ const InfoModalStyled = styled.div`
 	.center {
 		text-transform: uppercase;
 	}
+
 	@media (max-width: 500px) {
 		.modal-bg {
 			padding: 0.5rem 3rem 5rem;

@@ -37,7 +37,7 @@ export default function Header({ theme, toggleTheme }) {
 					)}
 				</button>
 			</div>
-			{open && <InfoModal setOpen={setOpen} />}
+			<InfoModal open={open} setOpen={setOpen} />
 		</StyledHeader>
 	);
 }

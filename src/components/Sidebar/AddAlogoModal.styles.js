@@ -10,6 +10,11 @@ const ModalStyled = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	.close-modal {
+		position: absolute;
+		top: 2rem;
+		right: 3rem;
+	}
 	.modal-container {
 		max-width: min(90%, 900px);
 		height: 90vh;

@@ -7,6 +7,7 @@ const HiddenDescListStyled = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 2;
 	.modal-bg {
 		background: ${(props) => props.theme.colors.dark};
 		width: fit-content;

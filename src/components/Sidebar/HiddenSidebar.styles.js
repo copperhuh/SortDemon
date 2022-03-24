@@ -20,6 +20,7 @@ const HiddenSidebarStyled = styled.div`
 		/* box-sizing: border-box; */
 		position: relative;
 		display: flex;
+		opacity: 1 !important;
 	}
 	.close-sidebar {
 		height: fit-content;

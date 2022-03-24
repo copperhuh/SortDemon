@@ -8,32 +8,49 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import AnimateHeight from "react-animate-height";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import CloseIcon from "@mui/icons-material/Close";
 
 function AddAlgoModal({ open, setOpen, addAlgorithm }) {
 	const [active, setActive] = React.useState(null);
 	const outside = React.useRef(null);
 
-	function onClose(e) {
+	function onCloseFromBg(e) {
 		if (outside.current === e.target) {
-			setOpen(false);
-			setActive(null);
-			setHeight({
-				exchange: 0,
-				quick: 0,
-				selection: 0,
-				insertion: 0,
-				merge: 0,
-				distribution: 0,
-				concurrent: 0,
-				miscellaneous: 0,
-				impractical: 0,
-			});
+			onClose();
 		}
+	}
+
+	function onClose() {
+		setOpen(false);
+		setActive(null);
+		setHeight({
+			exchange: 0,
+			quick: 0,
+			selection: 0,
+			insertion: 0,
+			merge: 0,
+			distribution: 0,
+			concurrent: 0,
+			miscellaneous: 0,
+			impractical: 0,
+		});
 	}
 
 	function onSubmit(name) {
 		addAlgorithm(name);
 		setActive(null);
+		setHeight({
+			exchange: 0,
+			quick: 0,
+			selection: 0,
+			insertion: 0,
+			merge: 0,
+			distribution: 0,
+			concurrent: 0,
+			miscellaneous: 0,
+			impractical: 0,
+		});
 		setOpen(false);
 	}
 
@@ -75,8 +92,16 @@ function AddAlgoModal({ open, setOpen, addAlgorithm }) {
 
 	if (!open) return null;
 	return ReactDOM.createPortal(
-		<ModalStyled ref={outside} onClick={onClose}>
-			<div className="modal-container">
+		<ModalStyled ref={outside} onClick={onCloseFromBg}>
+			<motion.div
+				animate={{ x: 0 }}
+				initial={{ x: "-50vw" }}
+				transition={{ ease: "easeIn", duration: 0.02 }}
+				className="modal-container"
+			>
+				<button onClick={onClose} className="close-modal">
+					<CloseIcon sx={{ fontSize: "2.7rem" }} />
+				</button>
 				<div className="section">
 					<button
 						onClick={onOpenSection}
@@ -356,7 +381,7 @@ function AddAlgoModal({ open, setOpen, addAlgorithm }) {
 				>
 					ADD
 				</button> */}
-			</div>
+			</motion.div>
 		</ModalStyled>,
 		document.getElementById("portal")
 	);

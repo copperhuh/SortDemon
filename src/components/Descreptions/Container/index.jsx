@@ -30,7 +30,7 @@ function Descriptions({ description, setDescRef, width }) {
 	const inViewport = useIntersection(descRef, "-120px");
 	return (
 		<DescContainer buttonVisible={inViewport}>
-			{open && <HiddenDescList setOpen={setOpen} />}
+			<HiddenDescList open={open} setOpen={setOpen} />
 			{width > 1350 ? (
 				<div className="desc-list">
 					<DescList />
