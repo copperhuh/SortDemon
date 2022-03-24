@@ -12,14 +12,15 @@ const ModalStyled = styled.div`
 	align-items: center;
 	.modal-container {
 		max-width: min(90%, 900px);
-		height: 80vh;
+		height: 90vh;
 		background-color: ${(props) => props.theme.colors.dark};
 		color: ${(props) => props.theme.colors.light};
 		overflow: auto;
 		display: flex;
 		flex-direction: column;
-		padding: 2rem 3rem 0;
-
+		justify-content: space-evenly;
+		padding: 2rem 5rem 2rem 2rem;
+		transition: all 0.5s;
 		&::-webkit-scrollbar {
 			width: 10px;
 		}
@@ -28,73 +29,72 @@ const ModalStyled = styled.div`
 		}
 		&::-webkit-scrollbar-thumb {
 			width: 7px;
-			background: ${(props) => props.theme.colors.light};
+			background: ${(props) => props.theme.colors.main};
 			border-radius: 5px;
 		}
 	}
 
-	.btns {
-		display: flex;
-		width: 75%;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-	}
-
-	h3 {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-weight: 900;
-		letter-spacing: 1.5px;
-	}
-
-	.section {
-		margin: 1rem 0.5rem;
-		padding: 2rem;
-		display: flex;
-		justify-content: space-between;
-		/* border-bottom: 1px solid ${(props) => props.theme.colors.light};
-		border-top: 1px solid ${(props) => props.theme.colors.light}; */
-	}
-
-	.algo-btn,
-	.submit {
-		background: ${(props) => props.theme.colors.light};
-		color: ${(props) => props.theme.colors.dark};
+	button {
+		background: none;
+		color: ${(props) => props.theme.colors.light};
+		border: none;
 		font-family: ${(props) => props.theme.fonts.main};
-		border: 1px solid ${(props) => props.theme.colors.dark};
-		padding: 0.5rem 1.5rem;
-		margin: 0.4rem 0.4rem;
-		font-size: 1rem;
-		font-weight: 600;
-		align-self: center;
-		&:hover,
-		&:focus {
-			background: ${(props) => props.theme.colors.dark};
-			color: ${(props) => props.theme.colors.light};
-			border: 1px solid ${(props) => props.theme.colors.light};
+		font-size: 1.3rem;
+	}
+
+	.section-title {
+		margin: 0 2.2rem;
+		position: relative;
+	}
+	svg {
+		position: absolute;
+		right: -2rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.btns {
+		/* display: flex;
+		flex-direction: column;
+		align-items: flex-start; */
+		list-style: none;
+		margin-left: 1rem;
+		/* margin-bottom: 1rem; */
+	}
+	.algo-btn {
+		margin: 0.3rem 0;
+	}
+	button:hover,
+	.active {
+		color: ${(props) => props.theme.colors.main};
+	}
+	@media (max-width: 630px) {
+		.section-title {
+			margin: 0 2.4rem;
 		}
 	}
-
-	.active {
-		background: ${(props) => props.theme.colors.dark};
-		color: ${(props) => props.theme.colors.light};
-		border: 1px solid ${(props) => props.theme.colors.light};
+	@media (max-width: 490px) {
+		.modal-container {
+			padding: 0 1rem;
+			width: 95vw;
+			padding-left: 6rem;
+		}
+		button {
+			text-align: left;
+		}
 	}
-
-	.submit {
-		padding: 1rem 2.5rem;
-		font-size: 1.7rem;
-		font-weight: 700;
-		letter-spacing: 2px;
-		border-radius: 5px;
-		/* align-self: flex-end; */
-		margin: 1.5rem 1rem;
-		&:disabled {
-			background: ${(props) => props.theme.colors.light};
-			color: ${(props) => props.theme.colors.dark};
-			border: 1px solid ${(props) => props.theme.colors.dark};
-			opacity: 0.5;
+	@media (max-width: 430px) {
+		.modal-container {
+			padding-left: 5rem;
+		}
+	}
+	@media (max-width: 400px) {
+		.modal-container {
+			padding-left: 3rem;
+		}
+	}
+	@media (max-width: 350px) {
+		.modal-container {
+			padding-left: 1rem;
 		}
 	}
 `;
