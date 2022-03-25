@@ -9,6 +9,8 @@ const Container = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
 	gap: ${(props) => (props.len > 6 ? "1rem" : "2rem")};
+	position: relative;
+
 	@media (max-width: 450px) {
 		width: 100%;
 		grid-template-columns: 1fr;

@@ -32,7 +32,6 @@ function Main({ algorithms, width }) {
 					<MenuIcon sx={{ fontSize: "2.7rem" }} />
 				</button>
 			)}
-
 			<HiddenSidebar
 				open={open}
 				setOpen={setOpen}

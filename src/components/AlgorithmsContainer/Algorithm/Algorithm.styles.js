@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const AlgorithmStyled = styled.div`
-	background-color: ${(props) => props.theme.colors.light};
+	/* background-color: ${(props) => props.theme.colors.light}; */
+	background-color: none;
 	color: ${(props) => props.theme.colors.dark};
 	display: flex;
 	min-height: 300px;
@@ -10,7 +11,6 @@ const AlgorithmStyled = styled.div`
 	align-items: center;
 	justify-content: space-evenly;
 	padding: 1% 0 5%;
-
 	h1 {
 		font-size: ${(props) =>
 			props.len < 4 ? "2rem" : props.len < 7 ? "1.3rem" : "1rem"};
