@@ -374,13 +374,6 @@ function AddAlgoModal({ open, setOpen, addAlgorithm }) {
 						</ul>
 					</AnimateHeight>
 				</div>
-				{/* <button
-					disabled={active === null}
-					onClick={active === null ? null : onSubmit}
-					className="submit"
-				>
-					ADD
-				</button> */}
 			</motion.div>
 		</ModalStyled>,
 		document.getElementById("portal")

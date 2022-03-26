@@ -6,7 +6,6 @@ export const StyledSortSettingsShown = styled.div`
 	color: ${(props) => props.theme.colors.main};
 	height: fit-content;
 	width: 100%;
-	/* margin-top: 5.5%; */
 	.shuffle {
 		grid-area: shuffle;
 	}

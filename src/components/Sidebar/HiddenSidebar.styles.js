@@ -8,16 +8,13 @@ const HiddenSidebarStyled = styled.div`
 	width: 100vw;
 	background: rgba(0, 0, 0, 0.3);
 	display: flex;
-	/* align-items: center; */
 	justify-content: right;
 	.sidebar-bg {
-		/* margin-right: -2rem; */
 		height: 100%;
 		width: fit-content;
 		overflow: auto;
 		background: ${(props) => props.theme.colors.light};
 		padding-left: 1.5rem;
-		/* box-sizing: border-box; */
 		position: relative;
 		display: flex;
 		opacity: 1 !important;
@@ -28,7 +25,6 @@ const HiddenSidebarStyled = styled.div`
 		top: 1.5rem;
 		left: 0;
 		width: fit-content;
-		/* padding: 0.3rem 0.5rem; */
 
 		display: flex;
 		align-items: center;

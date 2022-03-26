@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const AlgorithmStyled = styled.div`
-	/* background-color: ${(props) => props.theme.colors.light}; */
 	background-color: none;
 	color: ${(props) => props.theme.colors.dark};
 	display: flex;
@@ -35,11 +34,7 @@ const AlgorithmStyled = styled.div`
 		background: ${(props) => props.theme.colors.dark};
 		width: 100%;
 	}
-	/* .node-arrow {
-		width: 100%;
-		height: fit-content;
-		text-align: center;
-	} */
+
 	.active {
 		background: ${(props) => props.theme.colors.main};
 	}

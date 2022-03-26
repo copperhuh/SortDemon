@@ -10,11 +10,6 @@ export const StyledHeader = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: right;
-
-	/* position: fixed;
-	top: 0;
-	z-index: 1; */
-
 	span {
 		color: ${(props) => props.theme.colors.main};
 		font-weight: 700;

@@ -14,7 +14,6 @@ export default function newElements(items, max) {
 							}`}
 							style={{ height: `${(el.val * 100) / max}%` }}
 						></div>
-						{/* <div className='node-arrow' ><KeyboardArrowUpIcon sx={{ fontSize: 20 }}/></div> */}
 					</div>
 				);
 			})}

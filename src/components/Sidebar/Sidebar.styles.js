@@ -23,7 +23,6 @@ const SidebarStyled = styled.div`
 		display: flex;
 		padding: 1rem 0;
 		padding-left: 1rem;
-		/* border-top: 1px solid ${(props) => props.theme.colors.main}; */
 		margin-left: 0;
 	}
 
@@ -75,7 +74,6 @@ const SidebarStyled = styled.div`
 	.add-btn {
 		margin: 0;
 		border: none;
-		/* background: ${(props) => props.theme.colors.light}; */
 		.sort-add {
 			padding: 0.2rem 0;
 			display: flex;
@@ -85,11 +83,9 @@ const SidebarStyled = styled.div`
 			width: 100%;
 			height: 100%;
 			margin: 0;
-			/* background: ${(props) => props.theme.colors.dark}; */
 			background: none;
 			color: ${(props) => props.theme.colors.main};
 			&:hover {
-				/* color: ${(props) => props.theme.colors.dark}; */
 				transform: scale(1.2);
 			}
 		}

@@ -36,9 +36,6 @@ const MainContainer = styled.div`
 			border: 1px solid ${(props) => props.theme.colors.light};
 		}
 	}
-	/* @media (max-width: 450px) {
-		height: ${(props) => props.height};
-	} */
 `;
 
 export default MainContainer;

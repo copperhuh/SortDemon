@@ -58,12 +58,8 @@ const ModalStyled = styled.div`
 		transform: translateY(-50%);
 	}
 	.btns {
-		/* display: flex;
-		flex-direction: column;
-		align-items: flex-start; */
 		list-style: none;
 		margin-left: 1rem;
-		/* margin-bottom: 1rem; */
 	}
 	.algo-btn {
 		margin: 0.3rem 0;

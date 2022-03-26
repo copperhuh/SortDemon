@@ -29,7 +29,6 @@ const Alogrithm = ({ items, arrMax, speed, sortingMethod, len }) => {
 	return (
 		<AlgorithmStyled len={len}>
 			<h1>{deCamelCase(sortingMethod)}</h1>
-			{/* <div  ref={nodesRef} className='nodes'>{elements}</div> */}
 			<div className="nodes">
 				{newNodesRef.current
 					? items.map((el, inx) => {
@@ -49,7 +48,6 @@ const Alogrithm = ({ items, arrMax, speed, sortingMethod, len }) => {
 											}%`,
 										}}
 									></div>
-									{/* <div className='node-arrow' ><KeyboardArrowUpIcon sx={{ fontSize: 20 }}/></div> */}
 								</div>
 							);
 					  })

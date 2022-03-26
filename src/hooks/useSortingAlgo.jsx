@@ -24,7 +24,7 @@ const useSortingAlgo = (
 			if (elsObj.done) {
 				break;
 			}
-			await setElements(elsObj);
+			setElements(elsObj);
 		}
 	}
 
