@@ -59,7 +59,7 @@ To put it plainly, all logic takes place in a custom **hook**, that calls an **a
 
 Each sorting algorithm has its **own generator** function. I will explain how they work on **bubble sort**.
 
-All generators take in the **items** array and **arrMax** which is a number that represents the maximum value in the array (it is needed to determine the height of the bars). **Items** is an array of objects from which we get the starting unsorted array. Each element is an object in the form of **{ val: `<number>`, active: `<boolean>` }**. **Val** is just a natural number, which we refer to when sorting. **Active** represents whether or not the bar should be green (implying focus).
+All generators take in the `items` array and `arrMax` which is a number that represents the maximum value in the array (it is needed to determine the height of the bars). `items` is an array of objects from which we get the starting unsorted array. Each element is an object in the form of `{ val: <number>, active: <boolean> }`. `val` is just a natural number, which we refer to when sorting. `active` represents whether or not the bar should be green (implying focus).
 
 ```javascript
 export default function* bubbleSort(items, arrMax) {
@@ -100,7 +100,7 @@ export default function* bubbleSort(items, arrMax) {
 }
 ```
 
-Immediately at the beginning, we do a hard copy of **items** array, because the variable is shared by all visualizations, and so we can’t modify it.
+Immediately at the beginning, we do a hard copy of `items` array, because the variable is shared by all visualizations, and so we can’t modify it.
 
 We then start the sorting process and, whenever we deem appropriate, we yield how the copied array currently looks. We yield the value returned by the `newElements` function because it returns **jsx** elements based on the array that should be put on screen.
 
@@ -129,11 +129,11 @@ export default function newElements(items, max) {
 }
 ```
 
-With bubble sort, we want to show a new array whenever **i** or **j** variable is changed. We want to change the corresponding to them element’s **active** value to true, to show that the algorithm “looks” at them. We also change **j + 1** element’s **active** value to true because, in bubble sort, we compare element **j** with element **j + 1**.
+With bubble sort, we want to show a new array whenever `i` or `j` variable is changed. We want to change the corresponding to them element’s `active` value to true, to show that the algorithm “looks” at them. We also change `j + 1` element’s `active` value to true because, in bubble sort, we compare element `j` with element `j + 1`.
 
 ### The Async Function
 
-The async function is just a loop that calls a **sleep** function for the amount of time set by the user, **sets the state** value to what the generator yields and **breaks** the loop when the generator is done. The state that the function sets is the value **returned by the hook** and which is subsequently shown directly on the screen.
+The async function is just a loop that calls a `sleep` function for the amount of time set by the user, **sets the state** value to what the generator yields and **breaks** the loop when the generator is done. The state that the function sets is the value **returned by the hook** and which is subsequently shown directly on the screen.
 
 ```javascript
 async function getEls() {
