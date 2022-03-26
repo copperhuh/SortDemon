@@ -6,6 +6,16 @@ A website that is a visualizer of over 30 unique sorting algorithms, allowing fo
 
 [Github Pages](https://github.com/copperhuh/SortDemon)
 
+## Table of Contents
+
+[Technologies](#Technologies)  
+[Run Locally](#Run-Locally)  
+[How It Works](#How-It-Works)  
+[Inspiration](#Inspiration)  
+[Appendix](#Appendix)  
+[Author](#Author)  
+[Feedback](#Feedback)
+
 ## Technologies
 
 #### Main
