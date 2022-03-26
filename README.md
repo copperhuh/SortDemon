@@ -102,7 +102,7 @@ export default function* bubbleSort(items, arrMax) {
 
 Immediately at the beginning, we do a hard copy of **items** array, because the variable is shared by all visualizations, and so we can’t modify it.
 
-We then start the sorting process and, whenever we deem appropriate, we yield how the copied array currently looks. We yield the value returned by the **newElements** function because it returns **jsx** elements based on the array that should be put on screen.
+We then start the sorting process and, whenever we deem appropriate, we yield how the copied array currently looks. We yield the value returned by the `newElements` function because it returns **jsx** elements based on the array that should be put on screen.
 
 ```javascript
 export default function newElements(items, max) {
