@@ -1,3 +1,5 @@
+![Screenshot 1](https://github.com/copperhuh/SortDemon/blob/main/screenshots/Screenshot-2.png?raw=true)
+
 # SORT DEMON - Visualization of Sorting Algorithms
 
 A website that is a visualizer of over 30 unique sorting algorithms, allowing for custom delay time and input array size. Its purpose is to be a handy tool for learning the concept of sorting algorithms, as well as to highlight the fact that, in computer science, such rudimentary task as sorting an array can be performed in so many different ways. This is a personal project of mine with which I wanted to test my React, Redux, and Styled Components skills.
@@ -5,6 +7,8 @@ A website that is a visualizer of over 30 unique sorting algorithms, allowing fo
 ## Demo
 
 [Github Pages](https://github.com/copperhuh/SortDemon)
+
+![Screenshot 2](https://github.com/copperhuh/SortDemon/blob/main/screenshots/Screenshot-1.png?raw=true)
 
 ## Table of Contents
 
