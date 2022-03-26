@@ -53,13 +53,13 @@ Start the server
 
 Since I am quite proud of how the visualization feature was implemented, I will explain how it works the best that I can.
 
-To put it plainly, all logic takes place in a custom hook, that calls an async function that yields from a generator function specific to the chosen sorting algorithm.
+To put it plainly, all logic takes place in a custom **hook**, that calls an **async function** that yields from a **generator function** specific to the chosen sorting algorithm.
 
 ### The Generator
 
-Each sorting algorithm has its own generator function. I will explain how they work on bubble sort.
+Each sorting algorithm has its **own generator** function. I will explain how they work on **bubble sort**.
 
-All generators take in the items array and arrMax which is a number that represents the maximum value in the array (it is needed to determine the height of the bars). Items is an array of objects from which we get the starting unsorted array. Each element is an object in the form of { val: <number>, active: <boolean> }. Val is just a natural number, which we refer to when sorting. Active represents whether or not the bar should be green (implying focus).
+All generators take in the **items** array and **arrMax** which is a number that represents the maximum value in the array (it is needed to determine the height of the bars). **Items** is an array of objects from which we get the starting unsorted array. Each element is an object in the form of **{ val: `<number>`, active: `<boolean>` }**. **Val** is just a natural number, which we refer to when sorting. **Active** represents whether or not the bar should be green (implying focus).
 
 ```javascript
 export default function* bubbleSort(items, arrMax) {
@@ -100,15 +100,40 @@ export default function* bubbleSort(items, arrMax) {
 }
 ```
 
-Immediately at the beginning, we do a hard copy of items array, because the variable is shared by all visualizations, and so we can’t modify it.
+Immediately at the beginning, we do a hard copy of **items** array, because the variable is shared by all visualizations, and so we can’t modify it.
 
-We then start the sorting process and, whenever we deem appropriate, we yield how the copied array currently looks. We yield the value returned by the newElements function because it returns jsx elements based on the array that should be put on screen.
+We then start the sorting process and, whenever we deem appropriate, we yield how the copied array currently looks. We yield the value returned by the **newElements** function because it returns **jsx** elements based on the array that should be put on screen.
 
-With bubble sort, we want to show a new array whenever i or j variable is changed. We want to change the corresponding to them element’s active value to true, to show that the algorithm “looks” at them. We also change j+1 element’s active value to true because, in bubble sort, we compare element j with element j+1.
+```javascript
+export default function newElements(items, max) {
+	return (
+		<>
+			{items.map((el, inx) => {
+				return (
+					<div
+						key={inx}
+						className="node-container"
+						style={{ width: `calc(${(1 / max) * 100}% )` }}
+					>
+						<div
+							className={`node-coloured ${
+								el.active ? "active" : null
+							}`}
+							style={{ height: `${(el.val * 100) / max}%` }}
+						></div>
+					</div>
+				);
+			})}
+		</>
+	);
+}
+```
+
+With bubble sort, we want to show a new array whenever **i** or **j** variable is changed. We want to change the corresponding to them element’s **active** value to true, to show that the algorithm “looks” at them. We also change **j + 1** element’s **active** value to true because, in bubble sort, we compare element **j** with element **j + 1**.
 
 ### The Async Function
 
-The async function is just a loop that calls a sleep function for the amount of time set by the user, sets the state value to what the generator yields and breaks the loop when the generator is done. The state that the function sets is the value returned by the hook and which is subsequently shown directly on the screen.
+The async function is just a loop that calls a **sleep** function for the amount of time set by the user, **sets the state** value to what the generator yields and **breaks** the loop when the generator is done. The state that the function sets is the value **returned by the hook** and which is subsequently shown directly on the screen.
 
 ```javascript
 async function getEls() {
@@ -134,15 +159,15 @@ This video was a major inspiration for how to visualize the algorithms and was a
 
 ## Appendix
 
-SORT DEMON is a visualizer of sorting algorithms. It is meant to be used as a tool for learning how the algorithms act and how they contrast from one another. I did not design it to accurately show the relative speed of the algorithms, since I deemed it would make the faster algorithms less “readable”. Please keep that in mind while using the site.
+SORT DEMON is a visualizer of sorting algorithms. It is meant to be used as a tool for learning **how the algorithms act and how they contrast from one another**. I did **not** design it to accurately show the relative speed of the algorithms, since I deemed it would make the faster algorithms less “readable”. Please keep that in mind while using the site.
 
 ### About Algorithms
 
-There can be up to 9 algorithms running at the same time. If after adding a new algorithm, only its name appears, just click the reset or shuffle button to show it entirely. Also, note that removing an algorithm in the middle of the runtime can lead to some strange behavior that is also easily fixed with a reset or shuffle. Another thing - the more structurally complex algorithms (like the ones using recursion) have to run in their entirety before recreating their steps on the screen. I say that because that initial run in the background can lead to a slight lag when starting the visualization with a large array size and multiple of these complex algorithms.
+There can be up to 9 algorithms running at the same time. If after adding a new algorithm, only its name appears, just click the **reset** or **shuffle** button to show it entirely. Also, note that **removing an algorithm in the middle of the runtime** can lead to some strange behavior that is also easily fixed with a **reset** or **shuffle**. Another thing - the more structurally complex algorithms (like the ones using recursion) have to **run in their entirety** before recreating their steps on the screen. I say that because that initial run in the background can lead to a **slight lag** when starting the visualization with a **large array size** and **multiple of these complex algorithms**.
 
 ### About Descriptions
 
-I do not take credit for any of the descriptions’ contents - proper sources are linked at the bottom of each description. This is a personal project - the description functionality is just a feature that I thought would be nice to implement and thought that authentic articles would look better than some Lorem Ipsum boilerplate text. I strongly recommend everyone to visit the websites from which I go the articles - all of them are great resources for learning computer science-related topics.
+**I do not take credit for any of the descriptions’ contents** - proper sources are linked at the bottom of each description. This is a **personal project** - the description functionality is just a feature that I thought would be nice to implement and thought that authentic articles would look better than some Lorem Ipsum boilerplate text. I strongly recommend everyone to visit the websites from which I go the articles - all of them are great resources for learning computer science-related topics.
 
 ## Author
 
