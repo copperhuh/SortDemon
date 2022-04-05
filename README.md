@@ -6,7 +6,7 @@ A website that is a visualizer of over 30 unique sorting algorithms, allowing fo
 
 ## Demo
 
-[Github Pages](https://github.com/copperhuh/SortDemon)
+[Github Pages](https://copperhuh.github.io/SortDemon/)
 
 ![Screenshot 2](https://github.com/copperhuh/SortDemon/blob/main/screenshots/Screenshot-1.png?raw=true)
 
