@@ -181,7 +181,7 @@ There can be up to 9 algorithms running at the same time. If after adding a new 
 
 ### About Descriptions
 
-**I do not take credit for any of the descriptions’ contents** - proper sources are linked at the bottom of each description. This is a **personal project** - the description functionality is just a feature that I thought would be nice to implement and thought that authentic articles would look better than some Lorem Ipsum boilerplate text. I strongly recommend everyone to visit the websites from which I go the articles - all of them are great resources for learning computer science-related topics.
+**I do not take credit for any of the descriptions’ contents** - proper sources are linked at the bottom of each description. This is a **personal project** - the description functionality is just a feature that I thought would be nice to implement and thought that authentic articles would look better than some Lorem Ipsum boilerplate text. I strongly recommend everyone to visit the websites from which I got the articles - all of them are great resources for learning computer science-related topics.
 
 ## Author
 
